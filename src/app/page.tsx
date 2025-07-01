@@ -1,17 +1,11 @@
-import { client } from "@/libs/client";
-import { Work } from "@/types/work";
+import CaseStudyDetail from "@/components/CaseStudyDetail";
 
-export default async function Home() {
-  const data = await client.get<{ contents: Work[] }>({ endpoint: "casestudy" });
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-  return (
-    <main>
-      {data.contents.map((work) => (
-        <div key={work.id}>
-          <h2>{work.title}</h2>
-          <p>{work.role}</p>
-        </div>
-      ))}
-    </main>
-  );
+export default function Page({ params }: Props) {
+  return <CaseStudyDetail slug={params.slug} />;
 }
