@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Roboto, Arsenal } from "next/font/google";
+import { Arsenal } from "next/font/google";
 import "./globals.css";
 
-// 本文用の Google フォント Roboto
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+import { Noto_Sans_JP } from "next/font/google";
+
+const NotoSans = Noto_Sans_JP({
+  subsets: ["latin-ext"],
+  weight: "400",
+  variable: "--font-noto",
 });
+
 
 // 見出し用の Google フォント Arsenal
 const arsenal = Arsenal({
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -32,10 +35,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
-        ${roboto.variable} 
+        ${NotoSans.variable} 
         ${arsenal.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="text-neutral-800 leading-loose font-normal font-sans antialiased tracking-wider text-base">{children}</body>
     </html>
   );
 }
