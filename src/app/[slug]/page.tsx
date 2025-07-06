@@ -1,9 +1,11 @@
 import CaseStudyDetail from "@/components/CaseStudyDetail";
 
 type Props = {
-    params: { slug: string };
+    params: {
+        slug: string;
+    };
 };
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
     return <CaseStudyDetail slug={params.slug} />;
 }

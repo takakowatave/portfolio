@@ -2,13 +2,9 @@ import { RichTextRenderer } from "@/components/RichTextRenderer";
 import { client } from "@/libs/client";
 
 export default async function AboutPage() {
-  const aboutData = await client.get({
-    endpoint: "about", // 新しいエンドポイント名に合わせて修正
-  });
-console.log(typeof aboutData.aboutme);
-console.log(typeof aboutData.history);
-console.log(typeof aboutData.voice);
-console.log(aboutData);
+    const aboutData = await client.get({
+        endpoint: "about", // 新しいエンドポイント名に合わせて修正
+    });
 
     return (
         <main className="px-4 py-12 leading-relaxed max-w-3xl mx-auto space-y-12">

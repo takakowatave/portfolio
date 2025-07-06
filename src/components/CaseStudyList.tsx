@@ -25,18 +25,23 @@ export default async function CaseStudyList() {
             {contents.map(({ slug, title, thumbnail, role }) => (
 <Link
     key={slug}
-    href={`/casestudy/${slug}`}
+    href={`/${slug}`}
     className="block  overflow-hidden"
 >
     {thumbnail?.url && (
-        <Image
-        src={thumbnail.url}
-        alt={title}
-        width={1000}
-        height={562} // アスペクト比維持
-        className="w-full h-auto object-cover rounded-2xl shadow hover:shadow-lg transition-all bg-white"
-        />
+<div className="rounded-xl overflow-hidden">
+  <Image
+    src={thumbnail.url}
+    alt={title}
+    width={1000}
+    height={562}
+    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
+  />
+</div>
+
+
     )}
+
     <div className="p-4">                 
         <h2 className="text-xl font-semibold">{title}</h2>
         <p className="text-sm text-gray-500 mt-1">

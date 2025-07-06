@@ -25,6 +25,16 @@ export default async function CaseStudyDetail({ slug }: Props) {
         <article className="mx-auto px-4 py-12 leading-relaxed">
         <div className="max-w-3xl mx-auto">
             <Heading level="h1">{work.title}</Heading>
+            <div className="flex flex-wrap gap-2 mb-4">
+            {work.categories.map((cat) => (
+                <span
+                key={cat}
+                className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+                >
+                {cat}
+                </span>
+            ))}
+            </div>
             <p className="mb-12">{work.outline}</p>
         </div>
 
@@ -44,8 +54,8 @@ export default async function CaseStudyDetail({ slug }: Props) {
             <div>
                 {work.language.length > 0 && (
                 <div>
-                    <p className="font-semibold mt-2">担当</p>
-                    <p>{work.role?.join("、 ")}</p>
+                    <p className="font-semibold mt-2">使用言語</p>
+                    <p>{work.language?.join("、 ")}</p>
                 </div>
                 )}
                 
@@ -55,10 +65,10 @@ export default async function CaseStudyDetail({ slug }: Props) {
                 <p>{work.client}</p>
             </div>
             <div>
+                <p className="font-semibold my-2">役割</p>
+                <p className="mb-4">{work.role?.join("、 ")}</p>
                 <p className="font-semibold mt-2">チーム構成</p>
                 <p>{work.member}</p>
-                <p className="font-semibold mt-2">カテゴリ</p>
-                <p>{work.categories.join("、")}</p>
                 {work.language.length > 0 && (
                 <div>
                     <p className="font-semibold mt-2">使用技術</p>
