@@ -30,13 +30,13 @@ export default async function CaseStudyList() {
 >
     {thumbnail?.url && (
 <div className="rounded-xl overflow-hidden">
-  <Image
-    src={thumbnail.url}
-    alt={title}
-    width={1000}
-    height={562}
-    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
-  />
+    <Image
+        src={thumbnail.url}
+        alt={title}
+        width={1000}
+        height={562}
+        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
+    />
 </div>
 
 
