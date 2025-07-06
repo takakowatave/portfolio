@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Arsenal } from "next/font/google";
 import "./globals.css";
 
 import { Noto_Sans_JP } from "next/font/google";
@@ -8,14 +7,6 @@ const NotoSans = Noto_Sans_JP({
   subsets: ["latin-ext"],
   weight: "400",
   variable: "--font-noto",
-});
-
-
-// 見出し用の Google フォント Arsenal
-const arsenal = Arsenal({
-  variable: "--font-arsenal",
-  subsets: ["latin"], //言語設定
-  weight: ["400", "700"],
 });
 
 // ページ全体のメタ情報を定義する
@@ -36,7 +27,7 @@ export default function RootLayout({
       lang="en"
       className={`
         ${NotoSans.variable} 
-        ${arsenal.variable}`}
+        `}
     >
       <body className="text-neutral-800 leading-loose font-normal font-sans antialiased tracking-wider text-base">{children}</body>
     </html>

@@ -6,7 +6,7 @@ export const Heading =({ level, children }: { level: "h1" | "h2" | "h3"; childre
         return <h2 className="text-3xl font-bold pt-10 font-Outfit border-b border-gray-200 pb-2">
 {children}</h2>;
     }
-    return <h3 className="text-xl font-bold pt-6">{children}</h3>;
+    return <h3 className="text-xl font-bold pt-8 mb-4">{children}</h3>;
     }
 
 export default Heading;
