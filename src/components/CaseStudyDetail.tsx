@@ -66,6 +66,7 @@ export default async function CaseStudyDetail({ slug }: Props) {
         )}
         </>
 
+
         <div className="max-w-3xl mx-auto">
             <section className="mb-10 grid grid-cols-2 gap-4">
             <div>
