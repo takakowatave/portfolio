@@ -19,4 +19,5 @@ const LottiePlayer = ({ src }: { src: string }) => {
   return <div ref={ref} style={{ width: 300, height: 300, marginBottom: 20 }} />;
 };
 
+
 export default LottiePlayer;
