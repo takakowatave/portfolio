@@ -37,17 +37,34 @@ export default async function CaseStudyDetail({ slug }: Props) {
             </div>
             <p className="mb-12">{work.outline}</p>
         </div>
+        
+        <>
+
+        {/* 画像：スマホとPCで切り替え */}
+        {work.thumbnail?.url && (
+        <div className="w-full h-auto mb-8 sm:hidden">
+            <Image
+            src={work.thumbnail.url}
+            alt={work.title}
+            width={1000}
+            height={562}
+            className="object-cover w-full h-auto"
+            />
+        </div>
+        )}
 
         {work.eyecatchImage?.url && (
-            <div className="relative w-full h-[300px] mb-8">
+        <div className="w-full h-auto mb-8 hidden sm:block">
             <Image
-                src={work.eyecatchImage.url}
-                alt={work.title}
-                fill
-                className="object-cover"
+            src={work.eyecatchImage.url}
+            alt={work.title}
+            width={1000}
+            height={562}
+            className="object-cover w-full h-auto"
             />
-            </div>
+        </div>
         )}
+        </>
 
         <div className="max-w-3xl mx-auto">
             <section className="mb-10 grid grid-cols-2 gap-4">
@@ -64,6 +81,8 @@ export default async function CaseStudyDetail({ slug }: Props) {
                 <p className="font-semibold mt-2">クライアント</p>
                 <p>{work.client}</p>
             </div>
+
+
             <div>
                 <p className="font-semibold my-2">役割</p>
                 <p className="mb-4">{work.role?.join("、 ")}</p>
@@ -118,7 +137,7 @@ export default async function CaseStudyDetail({ slug }: Props) {
                     const src = el.attribs.src;
                     const alt = el.attribs.alt || "";
                     return (
-                    <div className="p-8 rounded-xl rounded-xl">
+                    <div className="p-2 rounded-xl rounded-xl">
                         <img src={src} alt={alt} className="mx-auto block h-auto" />
                     </div>
                     );

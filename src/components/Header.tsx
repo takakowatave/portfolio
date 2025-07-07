@@ -6,7 +6,7 @@ export const Header =()  =>{
         <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur flex items-center justify-between py-3 px-8 bg-white">
             <div>
                 <Link href="/" className="text-gray-700 rounded">
-                    <Image src="/logo.svg" alt="Logo" width={64} height={64} />
+                    <Image src="/logo.png" alt="Logo" width={40} height={40} />
                 </Link>
             </div>
 
