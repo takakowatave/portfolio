@@ -1,9 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     domains: ["images.microcms-assets.io"],
   },
+  env: {
+    BASIC_USER: process.env.BASIC_USER,
+    BASIC_PASS: process.env.BASIC_PASS,
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
