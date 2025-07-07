@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Noto_Sans_JP } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const NotoSans = Noto_Sans_JP({
   subsets: ["latin-ext"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="text-neutral-800 leading-loose font-normal font-sans antialiased tracking-wider text-base">
         <Header />
         {children}
+        <Footer />
         </body>
       
     </html>
