@@ -16,6 +16,7 @@ export function middleware(request: NextRequest) {
         }
     }
 
+    
     return new Response("パスワードが必要です", {
         status: 401,
         headers: {
