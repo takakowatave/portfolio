@@ -63,6 +63,7 @@ export const RichTextRenderer = ({ html }: { html: string }) => {
                     </div>
                 );
                 }
+
                 
                 if (domNode.type === "tag" && el.name === "h2") {
                     return (
