@@ -65,6 +65,7 @@ export const RichTextRenderer = ({ html }: { html: string }) => {
                 }
 
                 
+
                 if (domNode.type === "tag" && el.name === "h2") {
                     return (
                     <Heading level="h2">
