@@ -4,6 +4,8 @@ import { RichTextRenderer } from "@/components/RichTextRenderer";
 import { client } from "@/libs/client";
 import Button from "@/components/Button";
 
+export const revalidate = 60;
+
 export default async function AboutPage() {
     const aboutData = await client.get({ endpoint: "about" });
 
