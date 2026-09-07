@@ -172,6 +172,29 @@ export default async function CaseStudyDetail({ slug }: Props) {
                     </Heading>
                     );
                 }
+
+                if (domNode.type === "tag" && el.name === "h4") {
+                    return (
+                    <Heading level="h4">
+                        {domToReact(el.children as unknown as DOMNode[])}
+                    </Heading>
+                    );
+                }
+
+                if (domNode.type === "tag" && el.name === "a") {
+                    const { href, target, rel } = el.attribs;
+                    const isExternal = target === "_blank";
+                    return (
+                    <a
+                        href={href}
+                        target={target}
+                        rel={isExternal ? (rel ?? "noopener noreferrer") : rel}
+                        className="text-blue-600 underline underline-offset-2 hover:text-blue-800"
+                    >
+                        {domToReact(el.children as unknown as DOMNode[])}
+                    </a>
+                    );
+                }
                 },
             })}
             </div>

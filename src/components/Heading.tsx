@@ -1,4 +1,4 @@
-export const Heading =({ level, children }: { level: "h1" | "h2" | "h3"; children: React.ReactNode })  =>{
+export const Heading =({ level, children }: { level: "h1" | "h2" | "h3" | "h4"; children: React.ReactNode })  =>{
     if (level === "h1") {
         return <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-loose font-bold pb-10 font-Outfit">{children}</h1>;
     }
@@ -6,7 +6,10 @@ export const Heading =({ level, children }: { level: "h1" | "h2" | "h3"; childre
         return <h2 className="text-3xl font-bold pt-10 font-Outfit border-b border-gray-200 pb-2">
 {children}</h2>;
     }
-    return <h3 className="text-xl font-bold pt-8 mb-4">{children}</h3>;
+    if (level === "h3") {
+        return <h3 className="text-xl font-bold pt-8 mb-4">{children}</h3>;
+    }
+    return <h4 className="text-lg font-bold pt-6 mb-2">{children}</h4>;
     }
 
 export default Heading;
