@@ -19,7 +19,7 @@ export default function Footer() {
         <SiX className="w-6 h-6 text-gray-400 hover:text-gray-900 transition-colors" />
       </a>
       </div>
-      <p className="mt-2 text-center text-gray-400">© 2025 kikotkk</p>
+      <p className="mt-2 text-center text-gray-400">© 2026 kikotkk</p>
     </footer>
   
   );
